@@ -1,4 +1,4 @@
-import {Body, Controller, Post, UnauthorizedException} from '@nestjs/common';
+import {Body, Controller, Get, Post, UnauthorizedException} from '@nestjs/common';
 import {User} from "./user.schema";
 import {AuthService} from "./auth.service";
 import {LoginDto} from "./dtos/login.dto";
