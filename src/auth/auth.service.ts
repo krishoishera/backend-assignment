@@ -12,6 +12,10 @@ export class AuthService {
     constructor(@InjectModel(User.name)
                 private userModel: Model<UserDocument>,
                 private jwtService: JwtService) {}
+    
+    async GetAllUsers(): Promise<User[]> {
+        return await this.userModel.find().exec();
+    }
 
     async signUp(user: User): Promise<User> {
         const newUser = new this.userModel(user);
