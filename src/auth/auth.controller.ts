@@ -8,6 +8,11 @@ import {ApiTags} from "@nestjs/swagger";
 @Controller('auth')
 export class AuthController {
     constructor(private authService: AuthService) {}
+    
+    @Get()
+    async GetAllUsers(): Promise<User[]> {
+        return await this.authService.GetAllUsers();
+    }
 
     @Post('/signup')
     async SignUp(@Body() user: User): Promise<User> {
